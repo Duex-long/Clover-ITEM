@@ -30,6 +30,7 @@
 	}
 	.app-content {
 		width: 100%;
+		padding: 0 $base-padding;
 		flex: 1;
 	}
 </style>

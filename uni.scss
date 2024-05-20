@@ -19,6 +19,11 @@
 
 /* 颜色变量 */
 
+/* 初始化盒模型 */
+* {
+	box-sizing: border-box;
+}
+
 /* 行为相关颜色 */
 $uni-color-primary: #007aff;
 $uni-color-success: #4cd964;
