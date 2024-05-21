@@ -14,8 +14,6 @@
 	import Navigator from '@/components/navigator.vue'
 	import Home from '@/strategy/home.vue'
 	import { ref } from 'vue';
-	
-	
 	const title = ref<string>('')
 	
 </script>
