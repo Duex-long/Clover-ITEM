@@ -1,13 +1,13 @@
 <template>
-	<view class="app-search">
+	<view class="search">
 		<ImgDescribeVue size="80" position="left">
 			<template #media>
-				<view class="app-search-icon">
+				<view class="search-icon">
 					<image :src="SEARCH_SVG" mode="widthFix" style="width: 40rpx;" />
 				</view>
 			</template>
 			<template #describe>
-				<view class="app-search-insert">
+				<view class="search-insert">
 					<input v-model="searchValue" placeholder="search product" />
 				</view>
 			</template>
@@ -17,23 +17,24 @@
 
 <script lang="ts" setup>
 	import { ref } from 'vue';
-import ImgDescribeVue from '@/components/layout/img-describe.vue';
-	const SEARCH_SVG = "https://developer.mozilla.org/static/media/search.cebfd63a204ba9fefa74.svg"
+    import ImgDescribeVue from '@/components/layout/img-describe.vue';
+	import SEARCH_SVG from '@/static/icon/search.svg'
 	
 	const searchValue = ref("")
 </script>
 
 <style lang="scss" scoped>
-	.app-search {
+	.search {
 		width: 100%;
 		height: 80rpx;
 		background-color: #fff;
+		border-radius: $box-radius;
 	}
-	.app-search-icon {
+	.search-icon {
 		@include full-page;
 		@include flex-c-c;
 	}
-	.app-search-insert {
+	.search-insert {
 		@include full-page;
 		@include flex-c-c;
 		justify-content: flex-start;
