@@ -12,7 +12,7 @@
 <style lang="scss" scoped>
 	.app-title {
 		width: 100%;
-		margin-bottom: $base-padding;
+		margin-bottom: calc($base-padding / 8);
 		display: flex;
 		justify-content: space-between;
 		align-items: flex-end;

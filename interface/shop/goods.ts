@@ -1,12 +1,28 @@
-/* 商品基类 用于描述商品内容*/
+import { Category } from "@/interface/base"
 
-class Goods {
+/* 商品基类 用于描述商品内容*/
+const checkObject = (target:unknown) => typeof target == 'object' && !!target
+const  freezeProperties = <T extends Object>(target:T,keys:string[]) => {
+	if(!checkObject(target)) return 
+	const result = {}
+	keys.forEach(item => {
+		result[item] = {
+			writable:false
+		}
+	})
+	Object.defineProperties(target,result)
+}
+
+
+export default class Goods {
 	/* id */
 	id:string
 	/* 名称 */
 	name:string
 	/* 品牌 */
 	brand: string
+	/* 类别 */
+	category:Category
 	/* 库存 */
 	stock:number
 	/* 原价格 */
@@ -19,6 +35,7 @@ class Goods {
 	}
 	
 	constructor(config: any){
-		
+		Object.assign(this,config)
+		freezeProperties(this,['id','name','brand','price'])
 	}
 }

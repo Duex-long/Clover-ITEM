@@ -13,5 +13,18 @@ interface Carousel {
 	startTime:number
 	/* 结束日期 */
 	endTime:number
-	
+}
+
+/* 类别 */
+interface Category {
+	id:string
+	/* 名称 */
+	name:string
+	/* 图标 */
+	icon:string
+	/* */
+}
+export {
+	Carousel,
+	Category
 }

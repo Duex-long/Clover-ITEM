@@ -17,12 +17,15 @@ export const useUserinfo = defineStore("user", {
 export const useBaseInfo = defineStore("base", {
 	state: () => ({
 		baseInfo: {
-			bannerList: []
+			bannerList: [],
+			categoryCollection:[]
 		}
 	}),
 	actions: {
 		setBaseInfo(info : any) {
 			this.baseInfo = info
-		}
+		},
+		
+		
 	}
 })
