@@ -17,8 +17,7 @@
 		</view>
 		<Carousel/>
 		<Categories />
-			
-		
+		<Recommend/>
 	</view>
 </template>
 
@@ -27,6 +26,7 @@
 	import ImgDescribeVue from '@/components/layout/img-describe.vue';
 	import Carousel from '@/components/home/carousel.vue';
 	import Categories from '@/components/home/categories.vue';
+	import Recommend from '@/components/home/recommend.vue';
 	import Search from '@/components/search.vue';
 	import MenuIcon from '@/static/icon/menu.svg'
 	
