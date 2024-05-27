@@ -1,7 +1,7 @@
 <template>
 	<view class="app-wrapper">
+		<NavBar />
 		<scroll-view class="app-scroll-wrapper" scroll-y>
-			<NavBar />
 			<view class="app-content">
 				<Home />
 			</view>
@@ -25,14 +25,16 @@
 		width: 100vw;
 		display: flex;
 		flex-direction: column;
-		background: $primary-bg;
 		@include safe-area-inset-bottom;
+		background: $primary-bg;
 	}
 
 	.app-content {
 		width: 100%;
+		height: 100%;
 		padding: 0 $base-padding;
 		flex: 1;
+		flex-grow: 0;
 	}
 	.app-scroll-wrapper {
 		@include full-page;
