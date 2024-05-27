@@ -2,7 +2,6 @@
 	<view class="app-wrapper">
 		<NavBar/>
 		<view class="app-content">
-			
 			<Home/>
 		</view>
 		<Navigator/>
