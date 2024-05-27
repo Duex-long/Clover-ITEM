@@ -1,10 +1,12 @@
 <template>
 	<view class="app-wrapper">
-		<NavBar/>
-		<view class="app-content">
-			<Home/>
-		</view>
-		<Navigator/>
+		<scroll-view class="app-scroll-wrapper" scroll-y>
+			<NavBar />
+			<view class="app-content">
+				<Home />
+			</view>
+		</scroll-view>
+		<Navigator />
 	</view>
 </template>
 
@@ -14,20 +16,26 @@
 	import Home from '@/strategy/home.vue'
 	import { ref } from 'vue';
 	const title = ref<string>('')
-	
 </script>
 
 <style scoped lang="scss">
 	.app-wrapper {
+		position: relative;
 		height: 100vh;
 		width: 100vw;
 		display: flex;
 		flex-direction: column;
 		background: $primary-bg;
+		@include safe-area-inset-bottom;
 	}
+
 	.app-content {
 		width: 100%;
 		padding: 0 $base-padding;
 		flex: 1;
+	}
+	.app-scroll-wrapper {
+		@include full-page;
+		padding-bottom: $bottom-navigator;
 	}
 </style>

@@ -35,6 +35,9 @@
 		height: 240rpx;
 		overflow: hidden;
 	}
+	.swiper {
+		height: 100%;
+	}
 	.swiper-item {
 		width: 95%;
 		height: 240rpx;

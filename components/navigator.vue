@@ -7,11 +7,14 @@
 
 <style lang="scss" scoped>
 	.navigator {
-		height:10%;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: $bottom-navigator;
 		box-sizing: content-box;
 		background: #fff;
 		box-shadow: 0 0 20px 0px #838484;
 		background: transparent;
-		@include safe-area-inset-bottom;
 	}
 </style>

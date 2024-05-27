@@ -27,7 +27,7 @@
 
 	.categories-list {
 		height: 120rpx;
-		padding: calc($base-padding / 2) 0;
+		padding: calc($base-padding / 2) 0 0;
 		width: 100%;
 		white-space: nowrap;
 	}
@@ -48,6 +48,7 @@
 			display: block;
 			text-align: center;
 			font-size: 24rpx;
+			vertical-align: bottom;
 		}
 		
 	}

@@ -35,6 +35,7 @@
 <style lang="scss" scoped>
 	.app-home {
 		& > *{
+			// margin-bottom: calc($base-padding / 1.5);
 			margin-bottom: $base-padding;
 		}
 	}

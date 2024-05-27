@@ -1,7 +1,8 @@
 import { Category } from "@/interface/base"
 
 /* 商品基类 用于描述商品内容*/
-const checkObject = (target:unknown) => typeof target == 'object' && !!target
+export const checkObject = (target:unknown) => typeof target == 'object' && !!target
+export const checkFunction =  (target:unknown) => typeof target == 'function'
 const  freezeProperties = <T extends Object>(target:T,keys:string[]) => {
 	if(!checkObject(target)) return 
 	const result = {}
@@ -39,3 +40,6 @@ export default class Goods {
 		freezeProperties(this,['id','name','brand','price'])
 	}
 }
+
+
+// goods  brands  category 
