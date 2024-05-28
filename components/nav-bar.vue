@@ -12,6 +12,9 @@
 
 <style lang="scss" scoped>
 	.navBar {
+		position: fixed;
+		top: 0;
+		left: 0;
 		color: #fff;
 		width: 100%;
 		height: 80rpx;

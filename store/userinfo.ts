@@ -25,7 +25,23 @@ export const useBaseInfo = defineStore("base", {
 		setBaseInfo(info : any) {
 			this.baseInfo = info
 		},
-		
-		
+	}
+})
+
+export const strategyInfo = defineStore("strategy",{
+	state:() => ({
+		pageinfo:{
+			path:'/home',
+			query:{},
+			nodelist:{head:'home',next:null}
+		}
+	}),
+	actions:{
+		push(path:string,query?:{[x:string]:string}){
+			if(query){
+				this.pageinfo.query = query
+			}
+			this.pageinfo.path = path
+		}
 	}
 })

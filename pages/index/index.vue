@@ -2,9 +2,7 @@
 	<view class="app-wrapper">
 		<NavBar />
 		<scroll-view class="app-scroll-wrapper" scroll-y>
-			<view class="app-content">
-				<Home />
-			</view>
+			<StrategyIndex/>
 		</scroll-view>
 		<Navigator />
 	</view>
@@ -13,7 +11,7 @@
 <script setup lang="ts">
 	import NavBar from '@/components/nav-bar.vue';
 	import Navigator from '@/components/navigator.vue'
-	import Home from '@/strategy/home.vue'
+	import StrategyIndex from '@/strategy/index.vue';
 	import { ref } from 'vue';
 	const title = ref<string>('')
 </script>
@@ -27,15 +25,9 @@
 		flex-direction: column;
 		@include safe-area-inset-bottom;
 		background: $primary-bg;
+		padding-top: calc($base-padding * 2);
 	}
 
-	.app-content {
-		width: 100%;
-		height: 100%;
-		padding: 0 $base-padding;
-		flex: 1;
-		flex-grow: 0;
-	}
 	.app-scroll-wrapper {
 		@include full-page;
 		padding-bottom: $bottom-navigator;
