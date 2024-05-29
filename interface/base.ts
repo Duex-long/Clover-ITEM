@@ -16,7 +16,7 @@ interface Carousel {
 }
 
 /* 类别 */
-interface Category {
+interface CategoryInterface {
 	id:string
 	/* 名称 */
 	name:string
@@ -26,5 +26,5 @@ interface Category {
 }
 export {
 	Carousel,
-	Category
+	CategoryInterface
 }

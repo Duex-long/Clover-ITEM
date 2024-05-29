@@ -20,7 +20,6 @@ const request = (method : Extract<UniApp.RequestOptions, 'method'>, option : any
 
 
 
-
 export class Http {
 	request_intercept = []
 	request_intercept_callback = []

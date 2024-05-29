@@ -1,7 +1,7 @@
 <template>
 	<view class="app-wrapper">
 		<NavBar />
-		<scroll-view class="app-scroll-wrapper" scroll-y>
+		<scroll-view v-if="baseInfo.initState" class="app-scroll-wrapper" scroll-y >
 			<StrategyIndex/>
 		</scroll-view>
 		<Navigator />
@@ -9,10 +9,13 @@
 </template>
 
 <script setup lang="ts">
-	import NavBar from '@/components/nav-bar.vue';
+	import { useBaseInfo } from '../../store/userinfo';
+import NavBar from '@/components/nav-bar.vue';
 	import Navigator from '@/components/navigator.vue'
 	import StrategyIndex from '@/strategy/index.vue';
 	import { ref } from 'vue';
+	const baseInfo = useBaseInfo()
+	baseInfo.init()
 	const title = ref<string>('')
 </script>
 

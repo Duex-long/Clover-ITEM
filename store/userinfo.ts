@@ -1,4 +1,16 @@
 import { defineStore } from 'pinia'
+import HomeComponent from '@/strategy/home.vue'
+import { getBaseInfo } from '@/mockData/categories'
+
+const showLoading = (title:string) => {
+	uni.showLoading({
+		title,
+		mask:true
+	})
+	return ()=> {
+		uni.hideLoading()
+	}
+}
 
 export const useUserinfo = defineStore("user", {
 	state: () => ({
@@ -19,29 +31,49 @@ export const useBaseInfo = defineStore("base", {
 		baseInfo: {
 			bannerList: [],
 			categoryCollection:[]
-		}
+		},
+		initState:false,
 	}),
 	actions: {
 		setBaseInfo(info : any) {
 			this.baseInfo = info
 		},
+		async init(){
+			const closeLoading = showLoading("loading")
+			
+			//  request
+			const baseInfo = await getBaseInfo()
+			console.log(baseInfo,'baseInfo')
+			this.setBaseInfo({
+				categoryCollection:baseInfo.Categories
+			})
+			setTimeout(closeLoading,2000)
+			setTimeout((state) => this.initState = state,2010,true)
+			
+		}
 	}
 })
 
-export const strategyInfo = defineStore("strategy",{
+const COMPONENT_LIST = {
+	'home':HomeComponent
+}
+
+export const useStrategyInfo = defineStore("strategy",{
 	state:() => ({
 		pageinfo:{
-			path:'/home',
+			name:'home',
+			component:HomeComponent,
 			query:{},
-			nodelist:{head:'home',next:null}
+			// nodelist:{head:'home',next:null}
 		}
 	}),
 	actions:{
-		push(path:string,query?:{[x:string]:string}){
+		push(name:string,query?:{[x:string]:string}){
 			if(query){
 				this.pageinfo.query = query
 			}
-			this.pageinfo.path = path
+			this.pageinfo.name = name
+			this.pageinfo.component = COMPONENT_LIST[name]
 		}
 	}
 })

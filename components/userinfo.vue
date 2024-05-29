@@ -53,7 +53,7 @@ const {userinfo} = toRefs(useUserinfo())
 	.app-user-info {
 		@include full-page;
 		display: flex;
-		padding-left: $base-padding/2;
+		padding-left: calc($base-padding / 2);
 		flex-direction: column;
 		align-items: flex-start;
 		justify-content: space-between;

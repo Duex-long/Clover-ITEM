@@ -1,11 +1,15 @@
 <template>
 	<view class="app-strategy">
-		<Home />
+		<component :is="renderComponent" />
 	</view>
 </template>
 
 <script lang="ts" setup>
-	import Home from '@/strategy/home.vue'
+	import { computed, toRefs } from 'vue';
+	import { useStrategyInfo } from '@/store/userinfo';
+	const { pageinfo } = toRefs(useStrategyInfo())
+	
+	const renderComponent = computed(() => pageinfo.value.component)
 </script>
 
 <style lang="scss" scoped>
