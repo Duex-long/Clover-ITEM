@@ -9,7 +9,6 @@
 				<image class="circle-img " mode="widthFix" :src="MenuIcon" />
 				<label class="circle-label">All</label>
 			</view>
-			
 			<view class="categories-list-circle" v-for="item in baseInfo.categoryCollection" :key="item.id">
 				<image class="circle-img " mode="widthFix" :src="MenuIcon" />
 				<label class="circle-label">{{ item.name }}</label>
