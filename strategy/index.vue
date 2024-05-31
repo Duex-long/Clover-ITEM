@@ -5,11 +5,16 @@
 </template>
 
 <script lang="ts" setup>
-	import { computed, toRefs } from 'vue';
+	import { computed, onMounted, toRefs } from 'vue';
 	import { useStrategyInfo } from '@/store/userinfo';
-	const { pageinfo } = toRefs(useStrategyInfo())
+	const strategyInfo = useStrategyInfo()
+	const { pageinfo } = toRefs(strategyInfo)
 	
 	const renderComponent = computed(() => pageinfo.value.component)
+	
+	onMounted(() => {
+		strategyInfo.push("shop")
+	})
 </script>
 
 <style lang="scss" scoped>

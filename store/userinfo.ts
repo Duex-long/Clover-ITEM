@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia'
 import HomeComponent from '@/strategy/home.vue'
+import ShopComponent from '@/strategy/shop.vue'
 import { getBaseInfo } from '@/mockData/categories'
 
 const showLoading = (title:string) => {
@@ -55,7 +56,8 @@ export const useBaseInfo = defineStore("base", {
 })
 
 const COMPONENT_LIST = {
-	'home':HomeComponent
+	'home':HomeComponent,
+	'shop':ShopComponent
 }
 
 export const useStrategyInfo = defineStore("strategy",{

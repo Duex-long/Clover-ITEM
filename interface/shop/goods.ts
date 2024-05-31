@@ -1,8 +1,14 @@
-import { Category } from "@/interface/base"
+import { CategoryInterface as Category } from "@/interface/base"
 
 /* 商品基类 用于描述商品内容*/
 export const checkObject = (target:unknown) => typeof target == 'object' && !!target
 export const checkFunction =  (target:unknown) => typeof target == 'function'
+
+
+export  interface KeywordInterface {
+	id:string
+	name:string
+}
 const  freezeProperties = <T extends Object>(target:T,keys:string[]) => {
 	if(!checkObject(target)) return 
 	const result = {}

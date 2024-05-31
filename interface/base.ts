@@ -1,5 +1,5 @@
 /* banner interface */
-interface Carousel {
+ interface Carousel {
 	id:string
 	/* 宣传图 */
 	img:string

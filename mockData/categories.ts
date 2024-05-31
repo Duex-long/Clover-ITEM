@@ -39,4 +39,4 @@ const categoryConfigList = [
 
 const Categories = categoryConfigList.map((config)=> mockCategoryFactory(config))
 
-export  const getBaseInfo = () => Promise.resolve({Categories,bannerList:[]})
+export const getBaseInfo = () => Promise.resolve({Categories,bannerList:[]})
