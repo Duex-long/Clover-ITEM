@@ -4,7 +4,7 @@ export const checkObject = (target: unknown) =>
   typeof target == 'object' && !!target;
 export const checkFunction = (target: unknown) => typeof target == 'function';
 
-export const freezeProperties = <T extends Object>(
+export const freezeProperties = <T extends object>(
   target: T,
   keys: string[],
 ) => {
